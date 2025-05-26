@@ -1,0 +1,439 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <!-- Ensure proper scaling on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+    }
+  </style>
+
+  <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}" />
+  <!-- Rev-slider -->
+  <link rel="stylesheet" href="{% static 'rev/css/rs6.css' %}" />
+  <link rel="stylesheet" href="{% static 'rev/fonts/font-awesome/css/font-awesome.css' %}" />
+  <link rel="stylesheet" href="{% static 'rev/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}" />
+  <link rel="stylesheet" href="{% static 'rev/fonts/pe-icon-7-stroke/css/helper.css' %}" />
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+  <!-- Animation -->
+  <link rel="stylesheet" href="{% static 'css/animations.min.css' %}" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'fonts/themify-icons/themify-icons.css' %}" />
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/flaticon.css' %}" />
+  <!-- Magnefic Popup -->
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.min.css' %}" />
+  <!-- Style -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <!-- Responsive -->
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer" />
+  <style>
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    .nebula-loader {
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+
+    .cosmic-spinner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      animation: cosmicSpin 2s linear infinite;
+      border: 2px solid transparent;
+      border-top-color: #7f5af0;
+      border-bottom-color: #2cb67d;
+      box-shadow: 0 0 20px rgba(127, 90, 240, 0.3);
+    }
+
+    .cosmic-spinner::before,
+    .cosmic-spinner::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: #fffffe;
+      box-shadow: 0 0 10px #fffffe;
+    }
+
+    .cosmic-spinner::before {
+      width: 8px;
+      height: 8px;
+      top: 10px;
+      left: 10px;
+      animation: particleOrbit 3s linear infinite;
+    }
+
+    .cosmic-spinner::after {
+      width: 6px;
+      height: 6px;
+      bottom: 10px;
+      right: 10px;
+      animation: particleOrbit 2.5s linear infinite reverse;
+    }
+
+    .pulsing-core {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(45deg, #7f5af0, #2cb67d);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .loading-text {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fffffe;
+      font-family: Arial, sans-serif;
+      letter-spacing: 2px;
+      animation: textGlow 1.5s ease-in-out infinite;
+    }
+
+    @keyframes cosmicSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes particleOrbit {
+      from {
+        transform: rotate(0deg) translateX(30px) rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg) translateX(30px) rotate(-360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes textGlow {
+
+      0%,
+      100% {
+        text-shadow: 0 0 5px #7f5af0;
+        opacity: 0.8;
+      }
+
+      50% {
+        text-shadow: 0 0 15px #2cb67d;
+        opacity: 1;
+      }
+    }
+
+    /* Colorful background animation */
+    .loader-container::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg,
+          #7f5af0,
+          #2cb67d,
+          #7f5af0,
+          #2cb67d);
+      background-size: 400% 400%;
+      animation: gradientFlow 10s ease infinite;
+      mix-blend-mode: overlay;
+      opacity: 0.3;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+  </style>
+</head>
+<!-- <div id="pq-loading">
+    <div id="pq-loading-center">
+      <img src="{% static 'images/Logo/logo.png' %}" alt="Loading" />
+    </div>
+  </div> -->
+<div class="loader-container">
+  <div class="nebula-loader">
+    <div class="cosmic-spinner"></div>
+    <div class="pulsing-core"></div>
+    <div class="loading-text">LOADING</div>
+  </div>
+</div>
+{% comment %} <div class="bar-loader-wrapper">
+  <div class="bar-loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div> {% endcomment %}
+<!-- Loading -->
+
+<!-- Header -->
+<div class="pq-background-overlay"></div>
+<div class="pq-sidebar">
+  <div class="pq-close-btn">
+    <a class="pq-close" href="javascript:void(0)"><i class="ion-close-round"></i></a>
+  </div>
+  <div class="pq-sidebar-block mCustomScrollbar">
+    <div class="pq-sidebar-header">
+      <img loading="lazy" src="{% static 'images/Logo/logo.png' %}" class="pq-sidebar-logo"
+        alt="ErfanianMining and Processing-sidebar-logo" />
+    </div>
+    <div class="pq-sidebar-content">
+      <p>We lead sustainable minerals innovation, creating value and transforming industries. "Mining the future with
+        precision.</p>
+    </div>
+    <div class="pq-sidebars">
+      <div class="pq-widget">
+        <div class="wp-block-group">
+          <div class="wp-block-group__inner-container">
+            <h2>Gallery</h2>
+            <div class="row">
+              <div class="col-lg-4">
+                <img loading="lazy" src="{% static 'images/gallery/1.jpg' %}" alt="" />
+              </div>
+              <div class="col-lg-4">
+                <img loading="lazy" src="{% static 'images/gallery/2.jpg' %}" alt="" />
+              </div>
+              <div class="col-lg-4">
+                <img loading="lazy" src="{% static 'images/gallery/3.jpg' %}" alt="" />
+              </div>
+              <div class="col-lg-4 mt-4">
+                <img loading="lazy" src="{% static 'images/gallery/4.jpg' %}" alt="" />
+              </div>
+              <div class="col-lg-4 mt-4">
+                <img loading="lazy" src="{% static 'images/gallery/5.jpg' %}" alt="" />
+              </div>
+              <div class="col-lg-4 mt-4">
+                <img loading="lazy" src="{% static 'images/gallery/6.jpg' %}" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pq-sidebar-contact">
+      <ul class="pq-contact">
+        <li>
+          <i class="fa fa-map-marker"></i>
+          <span>Afghanistan, Herat, Herat City, Blood Bank Street, Chamber of Commerce Building, 4th Floor, Rooms 201
+            and 202.</span>
+        </li>
+        <li>
+          <a href="tel:+93700405570">
+            <i class="fa fa-phone"></i>
+            <span>+93-700405570</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:+93790010157">
+            <i class="fa fa-phone"></i>
+            <span>+93-790010157</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@erfanianmines.com"><i class="fa fa-envelope"></i><span>info@erfanianmines.com</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="pq-sidebar-social">
+      <!-- Social items -->
+    </div>
+  </div>
+</div>
+<header id="pq-header" class="pq-header-style-1 pq-has-sticky">
+  <div class="pq-header-diff-block">
+    <div class="row g-0">
+      <div class="col-lg-12">
+        <!-- <div class="pq-top-header top-style-1">
+            <div class="container-fluid p-0">
+              <div class="row flex-row-reverse">
+                <div class="col-md-6 text-right">
+                  <div class="pq-top-right text-right">
+                    {% comment %}
+                    <div class="pq-header-time" id="google_translate_element" style="width:150px;height:50px;padding:0;"></div>
+                    {% endcomment %}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="pq-header-contact">
+                    <ul>
+                      <li>
+                        <a href="tel:+93700405570">
+                          <i class="fa fa-phone"></i>
+                          <span>+93-700405570</span>
+                        </a>
+                        &nbsp;&nbsp; |&nbsp;&nbsp;
+                        <a href="tel:+93790010157">
+                          <i class="fa fa-phone"></i>
+                          <span>+93-790010157</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="mailto:info@erfanianmines.com"><i class="fas fa-envelope"></i><span>info@erfanianmines.com</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        <div class="pq-bottom-header">
+          <div class="row no-gutters">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{% url 'index' %}"><img loading="lazy" class="img-fluid logo"
+                    src="{% static 'images/Logo/logo.png' %}" alt="ErfanianMining and Processing" /></a>
+                <!-- Using only the Bootstrap toggler for collapse -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div id="pq-menu-contain" class="pq-menu-contain">
+                    <ul id="pq-main-menu" class="navbar-nav ml-auto">
+                      <li class="menu-item menu-item-has-children">
+                        <a href="{% url 'index' %}" aria-current="page">Home</a>
+                        <i class="fa pq-submenu-icon"></i>
+                      </li>
+                      <li class="menu-item">
+                        <a href="{% url 'portfolio-single' %}">Portfolio</a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="{% url 'our-blog' %}">Blog</a>
+                      </li>
+                      <li class="menu-item menu-item-has-children">
+                         <a href="{% url 'about-us' %}">About Us</a>  <i class="fas fa-angle-down ml-2 "></i>
+                       
+                        <ul class="sub-menu">
+                          <li class="menu-item">
+                            <a href="{% url 'about-us' %}">About Us</a>
+                          </li>
+                          <li class="menu-item menu-item-has-children">
+                            <a href="{% url 'services-1' %}">our services</a><i class="fa pq-submenu-icon"></i>
+                          </li>
+                          <li class="menu-item">
+                            <a href="{% url 'our-team' %}">our Team</a>
+                          </li>
+
+
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a href="{% url 'contact-us' %}">Contact Us</a>
+                      </li>
+                      <!-- Google Translate Dropdown -->
+                      <li class="menu-item google-translate-item">
+                        <div id="google_translate_element"></div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- End of navbar collapse -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+  integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<!-- Owl Carousel -->
+<script src="{% static 'js/owl.carousel.min.js' %}  "></script>
+<!-- Isotope -->
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<!-- Counter -->
+<script src="{% static 'js/jquery.countTo.min.js' %}"></script>
+<!-- Wow -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- Magnefic Popup -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Revslider -->
+<script src="{% static 'rev/js/rbtools.min.js' %}"></script>
+<script src="{% static 'rev/js/rs6.min.js' %}"></script>
+<script src="{% static 'js/rev-custom.js' %}"></script>
+<!-- Custom -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en', // Default language of your page
+        includedLanguages: 'en,fa,de', // English, Persian, and German
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    )
+  }
+  document.querySelector('.loader-container').style.display = 'none';
+</script>
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+{% endblock %}

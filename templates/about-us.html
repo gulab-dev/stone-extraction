@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+
+  <body>
+    {% block content %}
+      <!-- Loading -->
+
+      {% include 'navbar.html' %}
+
+      <!-- Breadcrumb -->
+      <div class="pq-breadcrumb">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav aria-label="breadcrumb">
+                <div class="pq-breadcrumb-title">
+                  <h1>About Us</h1>
+                </div>
+                <div class="pq-breadcrumb-container">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="{% url 'index' %}"><i class="fas fa-home me-2"></i>Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">About Us</li>
+                  </ol>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Breadcrumb -->
+
+      <!-- About Us -->
+      <section class="about-us pq-pb-180">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="about-us-img">
+                <img src="{% static 'images/about-us/1.jpg' %}" class="pq-image1 wow animated fadeInLeft" alt="" />
+                <img src="{% static 'images/about-us/2.jpg' %}" class="pq-image2 wow animated zoomIn" alt="" />
+              </div>
+            </div>
+            <div class="col-xl-6 pq-about-us-padding wow animated fadeInRight">
+              <div class="pq-section-title pq-style-1 pq-mb-35">
+                <span class="pq-section-sub-title">about us</span>
+                <h5 class="pq-section-main-title">Choose what fits your project</h5>
+                <p class="pq-section-description">we drive innovation and expertise to direct Afghanistan's mineral extraction and processing, creating jobs and delivering quality products for global markets while prioritizing sustainability and growth.</p>
+              </div>
+              <div class="row pq-mb-45">
+                <div class="col-lg-6 col-md-6">
+                  <div class="pq-icon-box pq-style-2">
+                    <div class="pq-icon">
+                      <i class="flaticon-tile-2"></i>
+                    </div>
+                    <div class="pq-icon-box-content">
+                      <h5>Mine <br />Extraction</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mt-4 mt-md-0">
+                  <div class="pq-icon-box pq-style-2">
+                    <div class="pq-icon">
+                      <i class="flaticon-modern-art"></i>
+                    </div>
+                    <div class="pq-icon-box-content">
+                      <h5>Processing</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="pq-list-check pq-mb-45">
+                <li>
+                  <i class="fas fa-circle"></i>
+                  <span>Sustainable Innovation: Utilize cutting-edge technologies for efficient extraction while committing to eco-friendly practices to protect Afghanistan’s environment and resources.</span>
+                </li>
+                <li>
+                  <i class="fas fa-circle"></i>
+                  <span>Economic Empowerment: Drive local economic growth by creating sustainable employment opportunities and adding value to Afghanistan's rich mineral resources.</span>
+                </li>
+                <li>
+                  <i class="fas fa-circle"></i>
+                  <span>Global Excellence: Strengthen Afghanistan’s global presence by exporting high-quality, processed materials to competitive international markets.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Us -->
+
+      <!-- Services -->
+      <!-- Services -->
+
+      <!-- Portfolio -->
+      <section class="portfolio">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-8 wow animated fadeInRight">
+              <div class="pq-section-title pq-style-1">
+                <span class="pq-section-sub-title">what we do</span>
+                <h5 class="pq-section-main-title">watch our latest projects</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="divider pq-right-border pq-45"></div>
+            </div>
+            <div class="col-lg-12 wow animated fadeInUp">
+              <div class="pq-portfoliobox-2">
+                <div class="pq-protfolio-tabs">
+                  {% for project in projects %}
+                    <div class="protfolio-tabs-item">
+                      <a href="#" class="protfolio-tabs-link">
+                        <span class="portfolio-number">{{ forloop.counter }}</span>
+                        <h5 class="portfolio-title">{{ project.name }}</h5>
+                        <p class="portfolio-location">Category: {{ project.category }}</p>
+                      </a>
+                      <img decoding="async" src="{{ project.image.url }}" alt="protfolio-tabs-img" class="protfolio-tabs-img" />
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest Work -->
+      <section class="latest-work">
+        <div class="container-fluid">
+          <div class="floating-image floating-image-left floating-image-2">
+            <img src="{% static 'images/floating-images/2.png' %}" alt="" />
+          </div>
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-8 wow animated fadeInRight">
+              <div class="pq-section-title pq-style-1">
+                <span class="pq-section-sub-title">Discover</span>
+                <h5 class="pq-section-main-title">Our Machinary</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="divider pq-right-border pq-45"></div>
+            </div>
+            <div class="col-lg-12 wow animated fadeInUp">
+              <div class="pq-portfoliobox pq-portfoliobox-style-1 pq-me-320">
+                <div class="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="false" data-desk_num="4" data-lap_num="2" data-tab_num="2" data-mob_num="1" data-mob_sm="1" data-autoplay="false" data-loop="true" data-margin="30">
+                  {% for discover in home_discover %}
+                    <div class="item">
+                      <div class="pq-portfoliobox-1">
+                        <div class="pq-portfolio-block">
+                          <div class="pq-portfolio-img">
+                            <img decoding="async" src="{{ discover.home_discover_image.url }}" alt="" />
+                          </div>
+                          <div class="pq-portfolio-info">
+                            <h5><a href="{% url 'portfolio-single' %}">{{ discover.home_discover_name }}</a></h5>
+                            <span><a href="{% url 'portfolio-single' %}">{{ discover.home_discover_role }}</a></span>
+                          </div>
+                          <div class="pq-btn-container">
+                            <a href="{% url 'portfolio-single' %}" class="pq-button pq-button-link">
+                              <div class="pq-button-block">
+                                <div class="pq-svg">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
+                                    <g transform="translate(-6.444 -1.74)">
+                                      <g data-name="Group 2">
+                                        <circle data-name="Ellipse 2" cx="17" cy="17.76" r="17.76" transform="translate(34.78 2.24)" fill="none" stroke="#2f7fe2" stroke-width="1" opacity="0.5"></circle>
+                                        <circle data-name="Ellipse 3" cx="17" cy="17.76" r="17.76" transform="translate(34.78 2.24)" fill="none" stroke="#2f7fe2" stroke-width="1"></circle>
+                                      </g>
+                                      <path data-name="Path 1" d="M49.525,14.265l-.627.779,5.583,4.5H6.444v1h48.02L48.9,24.954l.621.783L56.7,20.044Z" fill="#2f7fe2"></path>
+                                    </g>
+                                  </svg>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Latest Work -->
+
+      {% comment %} <!-- Blog -->
+      <section class="blog">
+        <div class="container-fluid">
+          <div class="floating-image floating-image-left floating-image-4">
+            <img src="{% static 'images/floating-images/4.png' %}" alt="" />
+          </div>
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-8 wow animated fadeInRight">
+              <div class="pq-section-title pq-style-1">
+                <span class="pq-section-sub-title">Latest News</span>
+                <h5 class="pq-section-main-title">Watch Our Latest Blog</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="divider pq-right-border pq-45"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 wow animated fadeInUp">
+              <div class="pq-blog tex-left">
+                <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false" data-desk_num="3" data-lap_num="2" data-tab_num="2" data-mob_num="1" data-mob_sm="1" data-autoplay="true" data-loop="true" data-margin="30">
+                  {% for about in about %}
+                    <div class="item">
+                      <div class="pq-blog-post">
+                        <div class="pq-post-media">
+                          <img decoding="async" src="{{ about.about_blog_image.url }}" alt="blog-image" />
+                          <div class="pq-post-category">
+                            <a href="{% url 'in-home-choose-a-light-floor-if-at-all-possible' %}">{{ about.about_blog_name }}</a>
+                          </div>
+                        </div>
+                        <div class="pq-blog-contain">
+                          <h5 class="pq-blog-title"><a href="{% url 'in-home-choose-a-light-floor-if-at-all-possible' %}">{{ about.about_blog_description }}</a></h5>
+                          <div class="pq-btn-container">
+                            <a href="{% url 'in-home-choose-a-light-floor-if-at-all-possible' %}" class="pq-button pq-button-link">
+                              <div class="pq-button-block">
+                                <div class="pq-svg">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="64.356" height="36.52" viewBox="0 0 64.356 36.52">
+                                    <g transform="translate(-6.444 -1.74)">
+                                      <g data-name="Group 2">
+                                        <circle data-name="Ellipse 2" cx="17" cy="17.76" r="17.76" transform="translate(34.78 2.24)" fill="none" stroke="#30373f" stroke-width="1" opacity="0.5"></circle>
+                                        <circle data-name="Ellipse 3" cx="17" cy="17.76" r="17.76" transform="translate(34.78 2.24)" fill="none" stroke="#30373f" stroke-width="1"></circle>
+                                      </g>
+                                      <path data-name="Path 1" d="M49.525,14.265l-.627.779,5.583,4.5H6.444v1h48.02L48.9,24.954l.621.783L56.7,20.044Z" fill="#30373f"></path>
+                                    </g>
+                                  </svg>
+                                </div>
+                                <span class="pq-button-text">read more</span>
+                              </div>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <br />
+      <br />
+      <!-- Blog --> {% endcomment %}
+
+      <!-- Footer -->
+      {% include 'footer.html' %}
+      <!-- Footer -->
+
+      <!-- Back To Top -->
+      <div id="back-to-top" class="active">
+        <a class="top" id="top" href="#top"><i class="ion-ios-arrow-up"></i></a>
+      </div>
+      <!-- Back To Top -->
+    {% endblock %}
+  </body>
+
+  <script>
+    'undefined' === typeof _trfq || (window._trfq = [])
+    'undefined' === typeof _trfd && (window._trfd = []),
+      _trfd.push(
+        {
+          'tccl.baseHost': 'secureserver.net'
+        },
+        {
+          ap: 'cpbh-mt'
+        },
+        {
+          server: 'sg2plmcpnl492384'
+        },
+        {
+          dcenter: 'sg2'
+        },
+        {
+          cp_id: '9858662'
+        },
+        {
+          cp_cache: ''
+        },
+        {
+          cp_cl: '8'
+        }
+      )
+  </script>
+</html>

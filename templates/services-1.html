@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head></head>
+
+  <body>
+    {% block content %}
+      <!-- Loading -->
+      {% include 'navbar.html' %}
+      <!-- Header -->
+
+      <!-- Breadcrumb -->
+      <div class="pq-breadcrumb">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav aria-label="breadcrumb">
+                <div class="pq-breadcrumb-title">
+                  <h1>Services</h1>
+                </div>
+                <div class="pq-breadcrumb-container">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a href="{% url 'index' %}"><i class="fas fa-home me-2"></i>Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Services</li>
+                  </ol>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Breadcrumb -->
+
+      <!-- Services -->
+      <section class="services">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-md-8">
+              <div class="pq-section-title pq-style-1">
+                <span class="pq-section-sub-title">what we offer</span>
+                <h5 class="pq-section-main-title">Providing Best Services</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="divider pq-right-border pq-45"></div>
+            </div>
+            {% for service in services %}
+              <div class="col-xl-4 col-lg-6 col-md-6 wow animated fadeInUp p-2">
+                <div class="pq-fancy-box pq-style-1 pq-bg-grey">
+                  <div class="pq-fancy-box-icon">
+                    <i class="flaticon-blueprint"></i>
+                  </div>
+                  <div class="pq-fancy-box-right-icon">
+                    <i class="flaticon-blueprint" aria-hidden="true"></i>
+                  </div>
+                  <div class="pq-fancy-box-info">
+                    <h5 class="pq-fancy-box-title">{{ service.services_service_name }}</h5>
+                    <p class="pq-fancy-box-description">{{ service.services_service_description }}</p>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <!-- Services -->
+      <section class="testimonial pq-pt-260">
+      <!-- Gallery -->
+      <!-- Gallery -->
+      <div class="gallery pq-bg-dark pq-bg-img-2 pb-xl-0 pq-py-130">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 wow animated fadeInDown">
+                    <div class="pq-section-title pq-style-1 text-center">
+                        <span class="pq-section-sub-title">our gallery</span>
+                        <h5 class="pq-section-main-title pq-text-white">We Specialize In Mining and Processing</h5>
+                    </div>
+                </div>
+                <div class="col-lg-12 pq-mb-130">
+                    <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="false" data-desk_num="4" data-lap_num="3" data-tab_num="2" data-mob_num="1" data-mob_sm="1" data-autoplay="false" data-loop="true" data-margin="30">
+                        {% if service_gallery %}
+                            {% for gallery in service_gallery %}
+                                <div class="item">
+                                    <a href="{{ gallery.services_gallery_image.url }}">
+                                        <img src="{{ gallery.services_gallery_image.url }}" alt="Gallery Image {{ forloop.counter }}" />
+                                    </a>
+                                    <p>{{ forloop.counter }}</p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No images available at the moment.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- Gallery -->
+
+      <!-- Gallery -->
+    </section>
+      {% comment %} <!-- Testimonial -->
+      <section class="testimonial pq-pt-260">
+        <div class="container-fluid">
+          <div class="floating-image floating-image-right floating-image-3">
+            <img src="{% static 'images/floating-images/3.png' %}" alt="" />
+          </div>
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 col-md-8 wow animated fadeInLeft">
+              <div class="pq-section-title pq-style-1">
+                <span class="pq-section-sub-title">our testimonial</span>
+                <h5 class="pq-section-main-title">What Do We Offer</h5>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div class="divider pq-left-border pq-45"></div>
+            </div>
+            <div class="col-lg-8 pq-pt-60 wow animated fadeInUp">
+              <div class="owl-carousel owl-loaded owl-drag" data-dots="true" data-nav="true" data-desk_num="1" data-lap_num="4" data-tab_num="4" data-mob_num="4" data-mob_sm="4" data-autoplay="false" data-loop="false" data-margin="30">
+                <div class="item">
+                  <div class="pq-testimonial-box pq-style-1 text-center">
+                    <div class="pq-testimonial-info">
+                      <div class="pq-testimonial-content">
+                        <p class="pq-testimonial-description">There are many variations of passage Lorem Ipsum available, majority have suffered alteration some form, by injected humour, or randomised words which don’t look even slightly believable. There are many variations of passage Lorem Ipsum available there isn’t anything embarrassing</p>
+                      </div>
+                      <div class="pq-testimonial-meta">
+                        <h5 class="pq-testmonial-title">Ali Erfanian</h5>
+                        <span>mananger</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="pq-testimonial-box pq-style-1 text-center">
+                    <div class="pq-testimonial-info">
+                      <div class="pq-testimonial-content">
+                        <p class="pq-testimonial-description">There are many variations of passage Lorem Ipsum available, majority have suffered alteration some form, by injected humour, or randomised words which don’t look even slightly believable. There are many variations of passage Lorem Ipsum available there isn’t anything embarrassing</p>
+                      </div>
+                      <div class="pq-testimonial-meta">
+                        <h5 class="pq-testmonial-title">Ali Erfanian</h5>
+                        <span>mananger</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="pq-testimonial-box pq-style-1 text-center">
+                    <div class="pq-testimonial-info">
+                      <div class="pq-testimonial-content">
+                        <p class="pq-testimonial-description">There are many variations of passage Lorem Ipsum available, majority have suffered alteration some form, by injected humour, or randomised words which don’t look even slightly believable. There are many variations of passage Lorem Ipsum available there isn’t anything embarrassing</p>
+                      </div>
+                      <div class="pq-testimonial-meta">
+                        <h5 class="pq-testmonial-title">Ali Erfanian</h5>
+                        <span>mananger</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonial --> {% endcomment %}
+
+      <!-- Blog -->
+      <!-- Blog -->
+
+      <!-- Footer -->
+      {% include 'footer.html' %}
+      <!-- Footer -->
+
+      <!-- Back To Top -->
+      <div id="back-to-top" class="active">
+        <a class="top" id="top" href="#top">
+            <i class="ion-ios-arrow-up"></i>
+
+        </a>
+    </div>
+      
+    {% endblock %}
+    <!-- Back To Top -->
+
+    <!-- Custom -->
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+
+  <script>
+    'undefined' === typeof _trfq || (window._trfq = [])
+    'undefined' === typeof _trfd && (window._trfd = []),
+      _trfd.push(
+        {
+          'tccl.baseHost': 'secureserver.net'
+        },
+        {
+          ap: 'cpbh-mt'
+        },
+        {
+          server: 'sg2plmcpnl492384'
+        },
+        {
+          dcenter: 'sg2'
+        },
+        {
+          cp_id: '9858662'
+        },
+        {
+          cp_cache: ''
+        },
+        {
+          cp_cl: '8'
+        }
+      ) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
+  </script>
+</html>

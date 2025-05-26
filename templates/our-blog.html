@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    {% block content %}
+    <!-- Loading -->
+    {% include "navbar.html" %}
+    <!-- Breadcrumb -->
+    <div class="pq-breadcrumb">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb">
+                        <div class="pq-breadcrumb-title">
+                            <h1>Our Blog</h1>
+                        </div>
+                        <div class="pq-breadcrumb-container">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html"><i class="fas fa-home me-2"></i>Home</a>
+                                </li>
+                                <li class="breadcrumb-item active">Our Blog</li>
+                            </ol>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb -->
+    <!-- Services -->
+    <section class="all-services">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar with Service Menu -->
+                <div class="col-lg-4">
+                    <div class="widget widget-port">
+                        <div class="menu-service-menu-container">
+                            <ul id="menu-service-menu" class="menu">
+                                <li class="menu-item">
+                                    <a>Mineral Exploration and Evaluation</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <p style="text-align: justify;">Comprehensive identification and assessment of mineral resources to ensure project viability and sustainability.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a>Extraction and Mineral Processing</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <p style="text-align: justify;">Efficient extraction and processing of raw materials to produce high-quality finished products.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a>Technical Mining Consultancy</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <p style="text-align: justify;">Expert guidance in mining operations, safety protocols, and project optimization for maximum efficiency.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a>Mineral Transportation and Logistics</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <p style="text-align: justify;">Reliable and cost-effective logistics solutions for the safe movement of minerals and related materials.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a>Laboratory and Mineral Analysis Services</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <p style="text-align: justify;">Precise testing and analysis of mineral samples to ensure quality and compliance with industry standards.</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget widget-port">
+                        <img decoding="async" loading="lazy" src="images/call-1.jpg" alt="">
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="col-lg-8 mt-4 mt-lg-0">
+                    <img src="{% static 'images/service-detail/1.jpg' %}" class="img-fluid pq-mb-30" alt="">
+                    <h4 class="pq-title">Mining &amp; Processing</h4>
+                    <p style="text-align: justify;">
+                        ErfanianMining drives Afghanistan’s mineral industry by transforming raw mineral resources into high-quality, value-added products. Our integrated approach encompasses a full spectrum of operations—from comprehensive exploration and resource evaluation to efficient extraction, state-of-the-art processing, and refined product casting—ensuring every step boosts local employment, empowers communities, and positions Afghanistan favorably in global markets.
+                    </p>
+                    <p class="pq-mb-45" style="text-align: justify;">
+                        Our roadmap begins with advanced geological surveys and data-driven exploration techniques that accurately assess mineral potential. Once resource viability is confirmed, we implement precise drilling, blasting, and ore extraction using modern technologies. The extracted ore is meticulously crushed, milled, and enriched via flotation and leaching processes. We then refine the metal through electrowinning and cast it into premium ingots—all under strict quality control protocols utilizing advanced laboratory analyses.
+                    </p>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <img src="{% static 'images/service-detail/small/1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-lg-6 col-md-6 mt-4 mt-md-0 pq-px-30">
+                            <h4 class="pq-title">Our Competitive Advantages</h4>
+                            <p class="mb-0">
+                                We combine cutting-edge technology with deep industry expertise, enabling us to optimize every phase of mineral extraction and processing.
+                            </p>
+                            <ul class="pq-list-check pq-mt-15">
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Creation of sustainable employment opportunities</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Utilization of innovative and eco-friendly technology</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Expanding Afghanistan’s presence in global markets</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row align-items-center flex-column-reverse flex-md-row mt-4 mt-xl-0 pq-mb-45">
+                        <div class="col-lg-6 col-md-6 mt-4 mt-md-0 pq-px-30">
+                            <h4 class="pq-title">Integrated Service Solutions</h4>
+                            <p class="mb-0">
+                                Our comprehensive suite of services covers every phase of the mining process:
+                            </p>
+                            <ul class="pq-list-check pq-mt-15">
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Exploration &amp; Evaluation – Detailed resource analysis preventing risks.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Extraction &amp; Processing – Converting raw ores into refined products with precision.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Technical Consultancy – Expert advice on safety, efficiency, and process optimization.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Transportation &amp; Logistics – Streamlined movement of minerals from mine to market.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-circle"></i>
+                                    <span>Mineral Analysis &amp; Laboratory Services – Rigorous quality testing using state-of-the-art instrumentation.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <img src="{% static 'images/service-detail/small/2.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+             
+                    <h4 class="pq-title">Who We Are</h4>
+                    <p style="text-align: justify;">
+                        we direct Afghanistan in advanced mineral extraction and processing. With an unmatched focus on sustainable innovation and technical excellence, we extract, process, and transform rich mineral resources—including gold, copper, iron, as well as exquisite marble and granite—into high-quality products. Our integrated operations create jobs, empower local communities, and position Afghanistan as a competitive player in global markets.
+                    </p>
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <h4 class="pq-title">Sustainable Innovation</h4>
+                            <p style="text-align: justify;">
+                                by Utilizing technologies for efficient extraction while committing to protect Afghanistan’s resources.
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4 class="pq-title" >Economic Growth</h4>
+                            <p style="text-align: justify;">
+                                by creating sustainable job opportunities and adding significant value to our mineral resources.
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4 class="pq-title">Global Excellence</h4>
+                            <p style="text-align: justify;">
+                                by Expanding Afghanistan’s global footprint delivering premium processed minerals to compete international markets.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pq-accordion-block pq-style-2">
+                        <div class="pq-accordion-block">
+                            <div class="pq-accordion-box pq-active 1">
+                                <div class="pq-ad-title">
+                                    <h4 class="ad-title-text">
+                                        What Sets Us Apart?
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                    </h4>
+                                </div>
+                                <div class="pq-accordion-details">
+                                    <p class="pq-detail-text" style="text-align: justify;">
+                                        Our unmatched integration of exploration, extraction, processing, and consultancy ensures that every project is executed with precision, quality, and an eye for sustainability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pq-accordion-block">
+                            <div class="pq-accordion-box 2">
+                                <div class="pq-ad-title">
+                                    <h4 class="ad-title-text">
+                                        How We Ensure Quality
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                    </h4>
+                                </div>
+                                <div class="pq-accordion-details">
+                                    <p class="pq-detail-text" style="text-align: justify;">
+                                        Through rigorous exploration, state-of-the-art processes, and continuous technical consultancy, we guarantee top-quality outcomes that meet international standards.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pq-accordion-block">
+                            <div class="pq-accordion-box 3">
+                                <div class="pq-ad-title">
+                                    <h4 class="ad-title-text">
+                                        Our Commitment to Sustainability
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                    </h4>
+                                </div>
+                                <div class="pq-accordion-details">
+                                    <p class="pq-detail-text" style="text-align: justify;">
+                                        By utilizing innovative technologies and eco-friendly practices, we safeguard our environment while maximizing the value of Afghanistan’s abundant minerals.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pq-accordion-block">
+                            <div class="pq-accordion-box 4">
+                                <div class="pq-ad-title">
+                                    <h4 class="ad-title-text">
+                                        Our Vision for the Future
+                                        <i aria-hidden="true" class="ion ion-plus-round active"></i>
+                                        <i aria-hidden="true" class="ion ion-minus-round inactive"></i>
+                                    </h4>
+                                </div>
+                                <div class="pq-accordion-details">
+                                    <p class="pq-detail-text">
+                                        We aim to be the catalyst for Afghanistan's mineral revolution—delivering innovation, sustainable growth, and global excellence in every project.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <!-- Footer -->
+    {% include "footer.html" %}
+    <!-- Footer -->
+
+    <!-- Back To Top -->
+    <div id="back-to-top" class="active">
+        <a class="top" id="top" href="#top">
+            <i class="ion-ios-arrow-up"></i>
+        </a>
+    </div>
+    <!-- Back To Top -->
+
+    {% endblock %}
+</body>
+
+<script>
+    'undefined' === typeof _trfq || (window._trfq = []);
+    'undefined' === typeof _trfd && (window._trfd = []), _trfd.push({
+            'tccl.baseHost': 'secureserver.net'
+        }, {
+            'ap': 'cpbh-mt'
+        }, {
+            'server': 'sg2plmcpnl492384'
+        }, {
+            'dcenter': 'sg2'
+        }, {
+            'cp_id': '9858662'
+        }, {
+            'cp_cache': ''
+        }, {
+            'cp_cl': '8'
+        }) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
+</script>
+<script src='../../../../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
+
+
+</html>
+
